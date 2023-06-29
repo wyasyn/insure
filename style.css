@@ -1,0 +1,488 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Karla:wght@400;700&display=swap");
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+html {
+  color-scheme: light dark;
+  font-size: 65.5%;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1, h2, h3 {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+}
+
+body {
+  background: hsl(0, 0%, 98%);
+  color: hsl(270, 9%, 17%);
+  font-family: "Karla", sans-serif;
+  line-height: 1.5;
+}
+
+.container {
+  width: 80%;
+  margin-inline: auto;
+}
+@media screen and (width <= 768px) {
+  .container {
+    width: 100%;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+@media screen and (width <= 768px) {
+  .desktop {
+    display: none;
+  }
+}
+
+@media screen and (width > 768px) {
+  .mobile {
+    display: none;
+  }
+}
+
+header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: hsl(0, 0%, 98%);
+  height: 60px;
+  z-index: 200;
+}
+header .nav_desktop {
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+}
+header .nav_desktop .nav-menu-desktop {
+  gap: 2rem;
+  align-items: center;
+}
+header .nav_desktop .nav-menu-desktop .nav-link {
+  color: inherit;
+  font-size: 1.6rem;
+  padding: 0.5em 1em;
+  font-weight: 400;
+  transition: all 0.3s ease-in;
+}
+header .nav_desktop .nav-menu-desktop .nav-link:hover {
+  color: hsl(256, 26%, 20%);
+}
+header .nav_desktop .nav-menu-desktop .nav-link:last-child {
+  border: 1px solid hsl(273, 4%, 51%);
+  transition: all 0.3s ease-in;
+}
+header .nav_desktop .nav-menu-desktop .nav-link:last-child:hover {
+  background: hsl(256, 26%, 20%);
+  color: hsl(0, 0%, 98%);
+}
+header .nav_mobile {
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+}
+header .nav_mobile .nav-menu-mobile {
+  position: fixed;
+  top: 60px;
+  right: -768px;
+  width: 100%;
+  background: hsl(270, 9%, 17%);
+  height: 100%;
+  flex-direction: column;
+  gap: 4rem;
+  padding-top: 5em;
+  align-items: center;
+  z-index: 100;
+  transition: all 0.3s ease-in;
+}
+header .nav_mobile .nav-menu-mobile .nav-link {
+  color: hsl(0, 0%, 98%);
+  font-size: 2rem;
+  text-transform: uppercase;
+  padding: 0.5em 3em;
+}
+header .nav_mobile .nav-menu-mobile .nav-link:hover, header .nav_mobile .nav-menu-mobile .nav-link:focus, header .nav_mobile .nav-menu-mobile .nav-link:active {
+  border: 2px solid hsl(0, 0%, 98%);
+}
+header .nav_mobile .nav-menu-mobile.active {
+  right: 0;
+}
+header .nav_mobile #menu {
+  height: 32px;
+  width: 32px;
+  background-image: url("/images/icon-hamburger.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+header .nav_mobile #menu.close {
+  background-image: url("/images/icon-close.svg");
+}
+
+.intro {
+  position: relative;
+  text-align: center;
+  background: hsl(256, 26%, 20%);
+  color: hsl(0, 0%, 98%);
+}
+@media screen and (width > 768px) {
+  .intro {
+    text-align: left;
+  }
+}
+.intro .container {
+  grid-template-columns: 1fr;
+}
+@media screen and (width > 768px) {
+  .intro .container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 500px;
+  }
+}
+.intro .container .col-1 {
+  grid-row: 2;
+  height: auto;
+  padding-bottom: 5em;
+}
+@media screen and (width > 768px) {
+  .intro .container .col-1 {
+    grid-row: 1;
+    grid-column: 1;
+  }
+}
+.intro .container .col-1 h1 {
+  font-size: 4rem;
+  margin-top: 1.5em;
+}
+@media screen and (width > 768px) {
+  .intro .container .col-1 h1 {
+    position: relative;
+    margin-top: 3em;
+    padding-top: 1em;
+  }
+  .intro .container .col-1 h1::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 1px;
+    background: hsl(0, 0%, 98%);
+  }
+}
+.intro .container .col-1 p {
+  font-size: 1.5rem;
+  margin: 2em 0;
+}
+@media screen and (width > 768px) {
+  .intro .container .col-1 p {
+    margin: 1em 0 2em 0;
+  }
+}
+.intro .container .col-1 .cta {
+  font-size: 1.5rem;
+  color: hsl(0, 0%, 98%);
+  padding: 0.5em 2em;
+  border: 2px solid hsl(0, 0%, 98%);
+  transition: all 0.3s ease-in;
+}
+.intro .container .col-1 .cta:hover {
+  background: hsl(0, 0%, 98%);
+  color: hsl(256, 26%, 20%);
+}
+.intro .container .col-1 ::before {
+  position: absolute;
+  top: 380px;
+  left: 0;
+  content: "";
+  width: 30%;
+  height: 30%;
+  background-image: url("/images/bg-pattern-intro-left-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: contain;
+}
+@media screen and (width > 768px) {
+  .intro .container .col-1 ::before {
+    background-image: url("/images/bg-pattern-intro-left-desktop.svg");
+    width: 50%;
+    height: 100%;
+  }
+}
+.intro .container .col-1 ::after {
+  z-index: 3;
+  position: absolute;
+  bottom: -200px;
+  right: 0;
+  content: "";
+  width: 30%;
+  height: 50%;
+  background-image: url("/images/bg-pattern-intro-right-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+}
+@media screen and (width > 768px) {
+  .intro .container .col-1 ::after {
+    background-image: url("/images/bg-pattern-intro-right-desktop.svg");
+    top: 0;
+    width: 50%;
+    height: 100%;
+  }
+}
+@media screen and (width > 768px) {
+  .intro .container .col-2 {
+    position: relative;
+  }
+}
+.intro .container .col-2 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (width > 768px) {
+  .intro .container .col-2 img {
+    position: absolute;
+    left: 64px;
+    bottom: -64px;
+    width: 400px;
+    height: 500px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+
+.about {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 5em 0;
+}
+.about .container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 3em 0;
+}
+@media screen and (width > 768px) {
+  .about .container {
+    margin: 15em 0;
+  }
+}
+.about .container h2 {
+  position: relative;
+  font-size: 3.5rem;
+  padding: 0.7em 0;
+}
+.about .container h2::before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  content: "";
+  height: 2px;
+  width: 150px;
+  background: hsl(256, 26%, 20%);
+}
+.about .container .strengths {
+  align-self: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 1em;
+  justify-content: center;
+  align-items: center;
+}
+.about .container .strengths .strength {
+  margin: 2em 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 330px;
+  width: 100%;
+}
+.about .container .strengths .strength img {
+  width: 80px;
+  height: 80px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.about .container .strengths .strength h3 {
+  font-size: 2rem;
+}
+.about .container .strengths .strength p {
+  font-size: 1.8rem;
+  color: hsl(273, 4%, 51%);
+}
+
+.more {
+  position: relative;
+  background: hsl(256, 26%, 20%);
+  color: hsl(0, 0%, 98%);
+  text-align: center;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 5em 2em;
+}
+@media screen and (width > 768px) {
+  .more {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.more h2 {
+  z-index: 1;
+  font-size: 3.5rem;
+  line-height: 1;
+}
+.more .cta {
+  z-index: 1;
+  color: inherit;
+  font-size: 2rem;
+  border: 2px solid hsl(0, 0%, 98%);
+  padding: 0.5em 2em;
+  width: 250px;
+  align-self: center;
+  transition: all 0.3s ease-in;
+}
+.more .cta:hover {
+  background: hsl(0, 0%, 98%);
+  color: hsl(256, 26%, 20%);
+}
+.more::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/images/bg-pattern-how-we-work-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: contain;
+}
+@media screen and (width > 768px) {
+  .more::before {
+    background-image: url("/images/bg-pattern-how-we-work-desktop.svg");
+  }
+}
+
+footer {
+  position: relative;
+}
+footer .footer_1 {
+  flex-direction: column;
+  margin: 5em 0;
+  padding: 3em 1em;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid hsl(273, 4%, 51%);
+}
+@media screen and (width > 768px) {
+  footer .footer_1 {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+footer .footer_1 img {
+  z-index: 1;
+  width: 150px;
+  height: auto;
+  margin-top: 4em;
+}
+footer .footer_1 .socials {
+  gap: 3rem;
+}
+footer .footer_1 .socials img {
+  z-index: 1;
+  width: 24px;
+  height: auto;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+footer .footer_1 .socials img:hover {
+  transform: translateY(-10px);
+  -webkit-transform: translateY(-10px);
+  -moz-transform: translateY(-10px);
+  -ms-transform: translateY(-10px);
+  -o-transform: translateY(-10px);
+}
+footer .footer_1::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 50%;
+  height: 50%;
+  background-image: url("/images/bg-pattern-footer-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: contain;
+}
+@media screen and (width > 768px) {
+  footer .footer_1::before {
+    background-image: url("/images/bg-pattern-footer-desktop.svg");
+  }
+}
+footer .footer_2 {
+  gap: 2rem;
+  align-items: start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+footer .footer_2 .foot {
+  width: 300px;
+  text-align: center;
+  padding: 1em;
+}
+@media screen and (width > 768px) {
+  footer .footer_2 .foot {
+    text-align: left;
+  }
+}
+footer .footer_2 .foot h3 {
+  font-size: 1.7rem;
+  color: hsl(273, 4%, 51%);
+  margin-bottom: 1.5em;
+}
+footer .footer_2 .foot li {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0.5em 0;
+  padding: 0.5em 0;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+footer .footer_2 .foot li:hover {
+  transform: translateX(-10px);
+  -webkit-transform: translateX(-10px);
+  -moz-transform: translateX(-10px);
+  -ms-transform: translateX(-10px);
+  -o-transform: translateX(-10px);
+}/*# sourceMappingURL=style.css.map */
